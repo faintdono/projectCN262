@@ -5,7 +5,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   <lib desc="#Gates" name="1"/>
   <lib desc="#Plexers" name="2"/>
   <lib desc="#Arithmetic" name="3"/>
-  <lib desc="#Memory" name="4"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6">
     <tool name="Text Tool">
@@ -131,147 +137,73 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(800,450)" to="(810,450)"/>
     <wire from="(770,400)" to="(850,400)"/>
     <wire from="(1140,240)" to="(1160,240)"/>
-    <comp lib="6" loc="(441,542)" name="Text">
-      <a name="text" val="Display"/>
+    <comp lib="0" loc="(160,700)" name="Splitter">
+      <a name="incoming" val="8"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="1"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
     </comp>
-    <comp lib="0" loc="(310,330)" name="Tunnel">
-      <a name="label" val="clc"/>
+    <comp lib="6" loc="(907,595)" name="Text">
+      <a name="text" val="If the random dot overlaps the head pixel, send a point signal"/>
+    </comp>
+    <comp lib="0" loc="(400,490)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="3" loc="(220,1120)" name="Comparator">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="2" loc="(220,680)" name="Decoder">
+      <a name="facing" val="south"/>
+      <a name="select" val="4"/>
+    </comp>
+    <comp lib="1" loc="(310,490)" name="OR Gate">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="1" loc="(900,230)" name="AND Gate">
+      <a name="width" val="16"/>
+      <a name="inputs" val="2"/>
     </comp>
     <comp lib="0" loc="(140,450)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="16"/>
       <a name="label" val="Dot Filtered"/>
     </comp>
-    <comp lib="1" loc="(1210,450)" name="OR Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="6" loc="(194,229)" name="Text">
-      <a name="text" val="body vector"/>
-    </comp>
-    <comp lib="0" loc="(250,770)" name="Constant">
+    <comp lib="0" loc="(150,240)" name="Pin">
       <a name="width" val="16"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(310,290)" name="Tunnel">
-      <a name="width" val="4"/>
-      <a name="label" val="Rank"/>
-    </comp>
-    <comp lib="0" loc="(1010,300)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="clc"/>
-    </comp>
-    <comp lib="0" loc="(810,210)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="Head filtered"/>
-    </comp>
-    <comp lib="0" loc="(110,530)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="Body"/>
-    </comp>
-    <comp lib="0" loc="(90,990)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="8"/>
-      <a name="label" val="Head"/>
-    </comp>
-    <comp lib="0" loc="(200,1010)" name="Splitter">
-      <a name="facing" val="north"/>
-      <a name="fanout" val="16"/>
-      <a name="incoming" val="16"/>
-      <a name="appear" val="right"/>
-    </comp>
-    <comp lib="3" loc="(220,1120)" name="Comparator">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="6" loc="(188,320)" name="Text">
-      <a name="text" val="Check for loss condition"/>
-    </comp>
-    <comp lib="3" loc="(900,640)" name="Comparator"/>
-    <comp lib="0" loc="(150,150)" name="Pin">
-      <a name="width" val="8"/>
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="2" loc="(340,760)" name="Multiplexer">
+    <comp lib="3" loc="(990,430)" name="Comparator">
       <a name="width" val="16"/>
     </comp>
-    <comp lib="0" loc="(770,260)" name="Tunnel">
+    <comp lib="0" loc="(800,450)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="16"/>
-      <a name="label" val="Body"/>
+      <a name="label" val="Dot filtered"/>
     </comp>
-    <comp lib="2" loc="(330,1050)" name="Multiplexer">
-      <a name="width" val="16"/>
+    <comp lib="0" loc="(1270,640)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(900,420)" name="AND Gate">
-      <a name="width" val="16"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(920,460)" name="Constant">
-      <a name="width" val="16"/>
+    <comp lib="0" loc="(1140,240)" name="Constant">
       <a name="value" val="0x0"/>
     </comp>
-    <comp lib="0" loc="(310,190)" name="Tunnel">
+    <comp lib="0" loc="(310,150)" name="Tunnel">
       <a name="width" val="8"/>
-      <a name="label" val="Head"/>
+      <a name="label" val="Dot"/>
     </comp>
     <comp lib="0" loc="(770,400)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="16"/>
       <a name="label" val="Body"/>
     </comp>
-    <comp lib="1" loc="(1210,260)" name="OR Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(780,680)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="8"/>
-      <a name="label" val="Head"/>
-    </comp>
-    <comp lib="0" loc="(1140,240)" name="Constant">
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(420,760)" name="Tunnel">
-      <a name="width" val="16"/>
-      <a name="label" val="Dot filtered"/>
-    </comp>
-    <comp lib="1" loc="(310,490)" name="OR Gate">
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="3" loc="(990,240)" name="Comparator">
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="3" loc="(990,430)" name="Comparator">
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="0" loc="(1140,430)" name="Constant">
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(90,1070)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="4"/>
-      <a name="label" val="Rank"/>
-    </comp>
-    <comp lib="1" loc="(900,230)" name="AND Gate">
-      <a name="width" val="16"/>
-      <a name="inputs" val="2"/>
-    </comp>
     <comp lib="6" loc="(192,281)" name="Text">
       <a name="text" val="Current Rank being read"/>
-    </comp>
-    <comp lib="6" loc="(171,419)" name="Text">
-      <a name="text" val="Sends dot, head and body to display"/>
-    </comp>
-    <comp lib="6" loc="(295,924)" name="Text">
-      <a name="text" val="If (head rank == body rank) assign decoded dot position, otherwise assign 0000"/>
-    </comp>
-    <comp lib="0" loc="(410,1050)" name="Tunnel">
-      <a name="width" val="16"/>
-      <a name="label" val="Head filtered"/>
-    </comp>
-    <comp lib="0" loc="(400,490)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="width" val="16"/>
     </comp>
     <comp lib="6" loc="(197,180)" name="Text">
       <a name="text" val="Head x,y data"/>
@@ -279,29 +211,58 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="6" loc="(135,115)" name="Text">
       <a name="text" val="Inputs is routed to tunnels"/>
     </comp>
-    <comp lib="0" loc="(260,1060)" name="Constant">
+    <comp lib="0" loc="(920,460)" name="Constant">
       <a name="width" val="16"/>
       <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="6" loc="(891,167)" name="Text">
+      <a name="text" val="If the head overlaps a body pixel, send a game over signal"/>
+    </comp>
+    <comp lib="0" loc="(150,150)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
     </comp>
     <comp lib="1" loc="(1110,280)" name="AND Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="6" loc="(291,632)" name="Text">
-      <a name="text" val="If (dot rank == body rank) assign decoded dot position, otherwise assign 0000"/>
+    <comp lib="1" loc="(1210,450)" name="OR Gate">
+      <a name="inputs" val="2"/>
     </comp>
-    <comp lib="0" loc="(150,240)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
+    <comp lib="0" loc="(1140,430)" name="Constant">
+      <a name="value" val="0x0"/>
     </comp>
-    <comp lib="2" loc="(210,970)" name="Decoder">
-      <a name="facing" val="south"/>
-      <a name="select" val="4"/>
+    <comp lib="0" loc="(310,330)" name="Tunnel">
+      <a name="label" val="clc"/>
     </comp>
     <comp lib="0" loc="(210,720)" name="Splitter">
       <a name="facing" val="north"/>
       <a name="fanout" val="16"/>
       <a name="incoming" val="16"/>
       <a name="appear" val="right"/>
+    </comp>
+    <comp lib="1" loc="(1110,470)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="3" loc="(230,830)" name="Comparator">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(1010,300)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="clc"/>
+    </comp>
+    <comp lib="0" loc="(310,190)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="Head"/>
+    </comp>
+    <comp lib="2" loc="(210,970)" name="Decoder">
+      <a name="facing" val="south"/>
+      <a name="select" val="4"/>
+    </comp>
+    <comp lib="0" loc="(90,330)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(188,320)" name="Text">
+      <a name="text" val="Check for loss condition"/>
     </comp>
     <comp lib="0" loc="(150,990)" name="Splitter">
       <a name="incoming" val="8"/>
@@ -313,103 +274,154 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit6" val="1"/>
       <a name="bit7" val="1"/>
     </comp>
-    <comp lib="0" loc="(1010,490)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="clc"/>
+    <comp lib="6" loc="(194,144)" name="Text">
+      <a name="text" val="Dot y,x data"/>
     </comp>
-    <comp lib="6" loc="(891,167)" name="Text">
-      <a name="text" val="If the head overlaps a body pixel, send a game over signal"/>
-    </comp>
-    <comp lib="0" loc="(770,630)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="8"/>
-      <a name="label" val="Dot"/>
-    </comp>
-    <comp lib="0" loc="(920,270)" name="Constant">
+    <comp lib="0" loc="(420,760)" name="Tunnel">
       <a name="width" val="16"/>
-      <a name="value" val="0x0"/>
+      <a name="label" val="Dot filtered"/>
     </comp>
-    <comp lib="6" loc="(30,336)" name="Text">
-      <a name="text" val="Check clk"/>
+    <comp lib="0" loc="(310,240)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="Body"/>
+    </comp>
+    <comp lib="6" loc="(441,542)" name="Text">
+      <a name="text" val="Display"/>
+    </comp>
+    <comp lib="0" loc="(310,290)" name="Tunnel">
+      <a name="width" val="4"/>
+      <a name="label" val="Rank"/>
+    </comp>
+    <comp lib="6" loc="(194,229)" name="Text">
+      <a name="text" val="body vector"/>
+    </comp>
+    <comp lib="0" loc="(100,780)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Rank"/>
     </comp>
     <comp lib="6" loc="(896,356)" name="Text">
       <a name="text" val="If the random dot is placed on the body, send an error signal"/>
+    </comp>
+    <comp lib="0" loc="(410,1050)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="Head filtered"/>
+    </comp>
+    <comp lib="0" loc="(1270,450)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(200,1010)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="16"/>
+      <a name="incoming" val="16"/>
+      <a name="appear" val="right"/>
     </comp>
     <comp lib="0" loc="(150,490)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="16"/>
       <a name="label" val="Head filtered"/>
     </comp>
-    <comp lib="1" loc="(1110,470)" name="AND Gate">
+    <comp lib="6" loc="(30,336)" name="Text">
+      <a name="text" val="Check clk"/>
+    </comp>
+    <comp lib="1" loc="(1210,260)" name="OR Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="3" loc="(230,830)" name="Comparator">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(310,150)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="Dot"/>
-    </comp>
-    <comp lib="0" loc="(1270,640)" name="Probe">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="6" loc="(194,144)" name="Text">
-      <a name="text" val="Dot y,x data"/>
-    </comp>
-    <comp lib="0" loc="(160,700)" name="Splitter">
-      <a name="incoming" val="8"/>
-      <a name="bit1" val="0"/>
-      <a name="bit2" val="0"/>
-      <a name="bit3" val="0"/>
-      <a name="bit4" val="1"/>
-      <a name="bit5" val="1"/>
-      <a name="bit6" val="1"/>
-      <a name="bit7" val="1"/>
-    </comp>
-    <comp lib="0" loc="(1270,450)" name="Probe">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="0" loc="(310,240)" name="Tunnel">
+    <comp lib="0" loc="(920,270)" name="Constant">
       <a name="width" val="16"/>
-      <a name="label" val="Body"/>
+      <a name="value" val="0x0"/>
     </comp>
-    <comp lib="0" loc="(1270,260)" name="Probe">
+    <comp lib="0" loc="(1270,260)" name="Pin">
       <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="0" loc="(780,680)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="8"/>
+      <a name="label" val="Head"/>
+    </comp>
+    <comp lib="1" loc="(270,1120)" name="NOT Gate"/>
     <comp lib="0" loc="(110,290)" name="Pin">
       <a name="width" val="4"/>
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="2" loc="(220,680)" name="Decoder">
-      <a name="facing" val="south"/>
-      <a name="select" val="4"/>
-    </comp>
-    <comp lib="0" loc="(90,330)" name="Pin">
+    <comp lib="0" loc="(150,190)" name="Pin">
+      <a name="width" val="8"/>
       <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(260,1060)" name="Constant">
+      <a name="width" val="16"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(770,630)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="8"/>
+      <a name="label" val="Dot"/>
+    </comp>
+    <comp lib="0" loc="(1010,490)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="clc"/>
+    </comp>
+    <comp lib="6" loc="(295,924)" name="Text">
+      <a name="text" val="If (head rank == body rank) assign decoded dot position, otherwise assign 0000"/>
+    </comp>
+    <comp lib="0" loc="(250,770)" name="Constant">
+      <a name="width" val="16"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(770,260)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="Body"/>
+    </comp>
+    <comp lib="6" loc="(291,632)" name="Text">
+      <a name="text" val="If (dot rank == body rank) assign decoded dot position, otherwise assign 0000"/>
     </comp>
     <comp lib="0" loc="(100,700)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="8"/>
       <a name="label" val="Dot"/>
     </comp>
-    <comp lib="0" loc="(800,450)" name="Tunnel">
+    <comp lib="1" loc="(900,420)" name="AND Gate">
+      <a name="width" val="16"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="2" loc="(330,1050)" name="Multiplexer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="6" loc="(171,419)" name="Text">
+      <a name="text" val="Sends dot, head and body to display"/>
+    </comp>
+    <comp lib="3" loc="(990,240)" name="Comparator">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(110,530)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="16"/>
-      <a name="label" val="Dot filtered"/>
+      <a name="label" val="Body"/>
     </comp>
-    <comp lib="1" loc="(270,1120)" name="NOT Gate"/>
-    <comp lib="0" loc="(150,190)" name="Pin">
+    <comp lib="0" loc="(90,990)" name="Tunnel">
+      <a name="facing" val="east"/>
       <a name="width" val="8"/>
-      <a name="tristate" val="false"/>
+      <a name="label" val="Head"/>
     </comp>
-    <comp lib="1" loc="(280,830)" name="NOT Gate"/>
-    <comp lib="0" loc="(100,780)" name="Tunnel">
+    <comp lib="0" loc="(810,210)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="Head filtered"/>
+    </comp>
+    <comp lib="2" loc="(340,760)" name="Multiplexer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(90,1070)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="4"/>
       <a name="label" val="Rank"/>
     </comp>
-    <comp lib="6" loc="(907,595)" name="Text">
-      <a name="text" val="If the random dot overlaps the head pixel, send a point signal"/>
-    </comp>
+    <comp lib="3" loc="(900,640)" name="Comparator"/>
+    <comp lib="1" loc="(280,830)" name="NOT Gate"/>
   </circuit>
 </project>
